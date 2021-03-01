@@ -1,6 +1,6 @@
 import React from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import AllPodcasts from './components/AllPodcasts'
+import Podcasts from './components/Podcasts'
 
 
 const App = () => {
@@ -11,7 +11,7 @@ const App = () => {
 
         </nav>
         <Switch>
-          <Route exact path='/' component={AllPodcasts}>
+          <Route exact path='/' component={Podcasts}>
 
           </Route>
         </Switch>

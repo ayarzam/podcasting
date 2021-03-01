@@ -1,58 +1,19 @@
 import React from 'react'
-// import axios from 'axios'
 
-// export default class SinglePodcast extends React.Component{
-//   constructor(){
-//     super()
-//     this.state = {
-//       allPodcasts: []
-//     }
-//   }
+export default function SinglePodcast(props) {
+  const podcast = props.podcast;
 
-//   async componentDidMount(){
-//     const url = `${process.env.REACT_APP_API}`
-//     const response = await axios.get(url)
-//     const podcastData = response.data.podcasts;
-//     this.setState({
-//            allPodcasts: podcastData
-//      })
-//   }
-
-
-//   render(){
-//     return(
-//       <div>
-//         <div>
-//         {this.state.allPodcasts.map((podcast) => { return(
-//           <div>
-//             <h2>{podcast.name}</h2>
-//             <p>{podcast.title}</p>
-//           </div>
-
-//         )})}
-//         </div>
-
-//       </div>
-//     )
-//   }
-// }
-
-export default function SinglePodcast(props){
-  const podcasts = props.podcasts
-  console.log(podcasts)
   return(
-    <div className='podcast'>
-      <div>
-        <div>
-          {podcasts.map(podcast =>{return(
-            <div>
-            <img src = {podcast.image} />
-            <h2>{podcast.name}</h2>
-            <p>{podcast.title}</p>
-            </div>
-          )})}
-        </div>
-        
+    <div className='single_podcast_container'>
+      <div className='single_podcast_info_container'>
+        <img src = {podcast.image} alt={podcast.name}/>
+        <h2 className='single_podcast_name'>Podcast Name: {podcast.name}</h2>
+        <p className='single_podcast_episode_title'>Episode Title: {podcast.title}</p>
+        <p className='single_podcast_description'>Podcast Description: {podcast.description}</p>
+        <a className='single_podcast_url' href={podcast.source}>Click here to visit the Podcast Home</a>
+      </div>
+      <div className='single_podcast_player'>
+        <audio src={podcast.audio} controls></audio>
       </div>
     </div>
   )
