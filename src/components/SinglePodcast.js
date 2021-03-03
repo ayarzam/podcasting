@@ -3,7 +3,7 @@ import { Card, Row, Col } from 'react-bootstrap'
 
 export default function SinglePodcast(props) {
   const podcast = props.podcast;
-
+ 
   return(
     <Card className='single_podcast_container' style={{marginTop: '3rem', marginBottom: '3rem'}}>
       <Card.Header as="h2" className='single_podcast_name'>{podcast.name}</Card.Header>
