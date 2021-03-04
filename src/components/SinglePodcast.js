@@ -1,11 +1,22 @@
 import React from 'react'
 import { Card, Row, Col } from 'react-bootstrap'
 
+/**
+ * A functional component for the creation of a single podcast.
+ */
 export default function SinglePodcast(props) {
   const podcast = props.podcast;
+
+  /**
+   * Sets the drag operation's drag data to the specified data and type.
+   * Stringifies the podcast Object and sets it as the data.
+   */
+  function onDragStart(event) {
+    event.dataTransfer.setData('text', JSON.stringify(podcast))
+  }
  
   return(
-    <Card className='single_podcast_container' style={{marginTop: '3rem', marginBottom: '3rem'}}>
+    <Card id={podcast.name} className='single_podcast_container' draggable onDragStart={onDragStart} style={{marginTop: '2rem', marginBottom: '2rem'}}>
       <Card.Header as="h2" className='single_podcast_name'>{podcast.name}</Card.Header>
       <Card.Body style={{height: '20rem'}}>
         <div className='single_podcast_info_container' style={{height: '100%'}}>
@@ -27,3 +38,5 @@ export default function SinglePodcast(props) {
     </Card>
   )
 }
+
+

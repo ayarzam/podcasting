@@ -1,21 +1,13 @@
 import React from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import Podcasts from './components/Podcasts'
-
+import PodcastPage from './views/PodcastPage'
 
 const App = () => {
   return(
     <Router>
-      <div> 
-        <nav>
-
-        </nav>
         <Switch>
-          <Route exact path='/' component={Podcasts}>
-
-          </Route>
+          <Route exact path='/' component={PodcastPage}></Route>
         </Switch>
-      </div>
     </Router>
   )
 }
