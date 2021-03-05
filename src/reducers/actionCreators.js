@@ -1,67 +1,71 @@
-import { GET_PODCASTS, GOT_PODCASTS, FAVORITES, ADD_FAVORITE, REMOVE_FAVORITE, DRAG_LEAVE, DRAG_ENTER, PLAY, PAUSE, CURRENTLY_PLAYING } from './actions'
-
+import {
+	GET_PODCASTS,
+	GOT_PODCASTS,
+	FAVORITES,
+	ADD_FAVORITE,
+	REMOVE_FAVORITE,
+	DRAG_LEAVE,
+	DRAG_ENTER,
+	PLAY,
+	PAUSE,
+	CURRENTLY_PLAYING,
+	UPDATE_CURRENTLY_PLAYING
+} from './actions';
 
 /**
  * Stores all the action creators to be dispatched to the reducer. 
  */
 
 export const getPodcasts = (data) => ({
-  type: GET_PODCASTS
+	type: GET_PODCASTS
 });
 
-export const gotPodcasts  = (data) => ({
-  type: GOT_PODCASTS,
-  payload: data
+export const gotPodcasts = (data) => ({
+	type: GOT_PODCASTS,
+	payload: data
 });
 
 export const Favorites = (data) => ({
-  type: FAVORITES,
-  payload: data
+	type: FAVORITES,
+	payload: data
 });
 
 export const addFavorite = (data) => ({
-  type: ADD_FAVORITE,
-  payload: data
+	type: ADD_FAVORITE,
+	payload: data
 });
 
 export const removeFavorite = (data) => ({
-  type: REMOVE_FAVORITE,
-  payload: data
-})
+	type: REMOVE_FAVORITE,
+	payload: data
+});
 
 export const dragLeave = (data) => ({
-  type: DRAG_LEAVE, 
-  payload: data
-})
+	type: DRAG_LEAVE,
+	payload: data
+});
 
 export const dragEnter = (data) => ({
-  type: DRAG_ENTER,
-  payload: data
-})
-
+	type: DRAG_ENTER,
+	payload: data
+});
 
 export const playing = (data) => ({
-  type: PLAY,
-  payload: data
+	type: PLAY,
+	payload: data
 });
 
-export const paused = (data) =>({
-  type: PAUSE, 
-  payload: data
+export const paused = (data) => ({
+	type: PAUSE,
+	payload: data
 });
 
-export const currently_playing = (data) => ({
-  type: CURRENTLY_PLAYING,
-  payload: data
+export const currentlyPlaying = (data) => ({
+	type: CURRENTLY_PLAYING,
+	payload: data
 });
 
-// export const dragged = (draggedPodcast) => ({
-//   type: DRAG,
-//   payload: draggedPodcast
-// })
-
-// export const dropped = (droppedPodcast) => ({
-//   type: DROP,
-//   payload: droppedPodcast
-// })
-
+export const updateCurrentlyPlaying = (data) => ({
+	type: UPDATE_CURRENTLY_PLAYING,
+	payload: data
+});

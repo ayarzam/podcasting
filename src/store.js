@@ -3,7 +3,15 @@ import loggingMiddleware from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import axios from 'axios';
 import { podcastReducer } from './reducers/index';
-import { getPodcasts, gotPodcasts, addFavorite, removeFavorite, dragLeave, dragEnter } from './reducers/actionCreators';
+import {
+	getPodcasts,
+	gotPodcasts,
+	addFavorite,
+	removeFavorite,
+	dragLeave,
+	dragEnter,
+	currentlyPlaying
+} from './reducers/actionCreators';
 
 /**
  * Redux thunk that makes an api call to populate the PodcastList React componenet.
@@ -54,31 +62,43 @@ export const deleteFavorite = (data) => {
  * Detects if an element has been dragged out of the FavoriteList.
  */
 export const updateDragLeave = (data) => {
-  return async (dispatch) => {
+	return async (dispatch) => {
 		try {
-      dispatch(dragLeave(data));
-    }
-    catch (error) {
-      console.log('There was a problem in the updateDragLeave thunk', error);
+			dispatch(dragLeave(data));
+		} catch (error) {
+			console.log('There was a problem in the updateDragLeave thunk', error);
 			console.error(error);
-    }
-  }
-}
+		}
+	};
+};
 
 /**
  * Detects if an element has been dragged in the FavoriteList.
  */
 export const updateDragEnter = (data) => {
-  return async (dispatch) => {
+	return async (dispatch) => {
 		try {
-      dispatch(dragEnter(data));
-    }
-    catch (error) {
-      console.log('There was a problem in the updateDragEnter thunk', error);
+			dispatch(dragEnter(data));
+		} catch (error) {
+			console.log('There was a problem in the updateDragEnter thunk', error);
 			console.error(error);
-    }
-  }
-}
+		}
+	};
+};
+
+/**
+ * Updates the state of currentlyPlaying so it reflects the currently played podcast.
+ */
+export const updateCurrentlyPlaying = (data) => {
+	return async (dispatch) => {
+		try {
+			dispatch(currentlyPlaying(data));
+		} catch (error) {
+			console.log('There was a problem in the fetchCurrentlyPlaying thunk', error);
+			console.error(error);
+		}
+	};
+};
 
 /**
  * Loads the state From Local Storage.
