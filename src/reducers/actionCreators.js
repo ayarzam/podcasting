@@ -1,4 +1,4 @@
-import { GET_PODCASTS, GOT_PODCASTS, FAVORITES, UPDATE_FAVORITES, PLAY, PAUSE, CURRENTLY_PLAYING } from './actions'
+import { GET_PODCASTS, GOT_PODCASTS, FAVORITES, ADD_FAVORITE, REMOVE_FAVORITE, PLAY, PAUSE, CURRENTLY_PLAYING } from './actions'
 
 export const getPodcasts = (data) => ({
   type: GET_PODCASTS
@@ -14,10 +14,15 @@ export const Favorites = (data) => ({
   payload: data
 });
 
-export const updateFavoriteList = (data) => ({
-  type: UPDATE_FAVORITES,
+export const addFavorite = (data) => ({
+  type: ADD_FAVORITE,
   payload: data
 });
+
+export const removeFavorite = (data) => ({
+  type: REMOVE_FAVORITE,
+  payload: data
+})
 
 // export const getFavorites = (data) => ({
 //   type: GET_FAVORITES

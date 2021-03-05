@@ -2,7 +2,7 @@ import React from 'react'
 import SinglePodcast from './SinglePodcast';
 import { Col } from 'react-bootstrap';
 import { connect } from 'react-redux'
-import { addFavorite } from '../store'
+import { updateFavorites, deleteFavorite } from '../store'
 
 /**
  * Component that creates the user's list of favorite podcasts. Allows podcasts 
@@ -27,6 +27,8 @@ class FavoritesList extends React.Component {
     event.preventDefault();
     let data = event.dataTransfer.getData('text');
     data = JSON.parse(data);
+
+    console.log('dragging', data)
     
     /** 
      * Filters through the list to check for duplicate elements whose name is 
@@ -40,7 +42,32 @@ class FavoritesList extends React.Component {
        * Updates the list to contain the newly dragged in podcast and then updates the
        * state of the parent list.
       */
-      this.props.addFavorite(favoriteList.concat(data));
+      this.props.updateFavorites(favoriteList.concat(data));
+    }
+  };
+
+  onDragLeave = (event) => {
+    if (event.target.id === 'favoritesList') {
+      console.log(event.target)
+      
+      let area = event.target.getBoundingClientRect();
+      console.log(area);
+
+      // event.addEventListener('mouseUp', function() {
+      //   let { favoriteList } = this.props;
+      //   let newList = favoriteList.filter(elem => elem.name !== event.target.name);
+      //   this.props.deleteFavorite(newList);
+      // })
+
+      // onDragLeave prints only when the podcast is dragged out of the list area
+      // can we add a state so that we can set dragLeave as true?
+      // we also have to set dragLeave to false if it re-enters the list area.
+
+      // when the mouseUp happens we can then check if mouseUp has occured in a separate function and do the follwoing:
+
+      //   let { favoriteList } = this.props;
+      //   let newList = favoriteList.filter(elem => elem.name !== data.name);
+      //   this.props.deleteFavorite(newList);
     }
   };
 
@@ -52,7 +79,7 @@ class FavoritesList extends React.Component {
     }
 
     return(
-      <Col id='favoritesList' className="list_column" onDrop={this.onDrop} onDragOver={this.onDragOver} lg="6" md="6" sm="6" xs="6" style={{ padding: '0 1.5rem', border: '1px solid black', borderRadius: '6px' }}>
+      <Col id='favoritesList' className="list_column" onDrop={this.onDrop} onDragOver={this.onDragOver} onDragLeave={this.onDragLeave} lg="6" md="6" sm="6" xs="6" style={{ padding: '0 1.5rem', border: '1px solid black', borderRadius: '6px' }}>
         {(favoriteList.map((podcast) => {
           return (
             <SinglePodcast key={podcast.name} podcast={podcast} />
@@ -78,7 +105,8 @@ const mapStateToProps = (state) => ({
  * get request and populates the component did mount stage of the lifecycle.
  */
 const mapDispatchToProps = (dispatch) => ({
-  addFavorite: (data) => dispatch(addFavorite(data))
+  updateFavorites: (data) => dispatch(updateFavorites(data)),
+  deleteFavorite: (data) => dispatch(deleteFavorite(data))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(FavoritesList)
