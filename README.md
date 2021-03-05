@@ -34,7 +34,7 @@ npm start
 ```
 
 ## 🚀 Web Demo
-![Web App Demo]([https://imgur.com/oiKK0Lx.gif) "Podcasting Demo")
+![Web App Demo](https://i.imgur.com/oiKK0Lx.gif "Podcasting Demo")
 
 ## ⛏️ Built Using
 - [React](https://github.com/facebook/create-react-app) - Web Framework
