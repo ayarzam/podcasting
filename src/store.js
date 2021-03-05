@@ -5,6 +5,9 @@ import axios from 'axios';
 import { podcastReducer } from './reducers/index';
 import { getPodcasts, gotPodcasts, addFavorite, removeFavorite, dragLeave, dragEnter } from './reducers/actionCreators';
 
+/**
+ * Redux thunk that makes an api call to populate the PodcastList React componenet.
+ */
 export const fetchPodcasts = () => {
 	return async (dispatch) => {
 		try {
@@ -19,6 +22,9 @@ export const fetchPodcasts = () => {
 	};
 };
 
+/**
+ * Creates an update for the FavoritesList.
+ */
 export const updateFavorites = (data) => {
 	return async (dispatch) => {
 		try {
@@ -30,6 +36,9 @@ export const updateFavorites = (data) => {
 	};
 };
 
+/**
+ * Removes an element from the FavoritesList.
+ */
 export const deleteFavorite = (data) => {
 	return async (dispatch) => {
 		try {
@@ -41,6 +50,9 @@ export const deleteFavorite = (data) => {
 	};
 };
 
+/**
+ * Detects if an element has been dragged out of the FavoriteList.
+ */
 export const updateDragLeave = (data) => {
   return async (dispatch) => {
 		try {
@@ -53,6 +65,9 @@ export const updateDragLeave = (data) => {
   }
 }
 
+/**
+ * Detects if an element has been dragged in the FavoriteList.
+ */
 export const updateDragEnter = (data) => {
   return async (dispatch) => {
 		try {
@@ -65,6 +80,9 @@ export const updateDragEnter = (data) => {
   }
 }
 
+/**
+ * Loads the state From Local Storage.
+ */
 const loadFromLocalStorage = () => {
 	try {
 		const serializedState = localStorage.getItem('states');
@@ -79,6 +97,9 @@ const loadFromLocalStorage = () => {
 	}
 };
 
+/**
+ * Loads the state to Local Storage.
+ */
 const saveToLocalStorage = (state) => {
 	try {
 		const serializedState = JSON.stringify(state);
@@ -89,6 +110,10 @@ const saveToLocalStorage = (state) => {
 	}
 };
 
+/**
+ * Creates the redux store and also subscribes the store to local storage in order to 
+ * persist the state on page reload.
+ */
 const peristedState = loadFromLocalStorage();
 
 const store = createStore(podcastReducer, peristedState, applyMiddleware(thunkMiddleware, loggingMiddleware));

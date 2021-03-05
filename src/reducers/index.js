@@ -1,5 +1,9 @@
 import { GET_PODCASTS, GOT_PODCASTS, FAVORITES, ADD_FAVORITE, REMOVE_FAVORITE, DRAG_LEAVE, PLAY, PAUSE, CURRENTLY_PLAYING, DRAG_ENTER } from './actions';
 
+/**
+ * Reducer stores all the states used by the react componenets.
+ */
+
 const initialState = {
   podcasts: [],
   loading: true, 

@@ -1,5 +1,10 @@
 import { GET_PODCASTS, GOT_PODCASTS, FAVORITES, ADD_FAVORITE, REMOVE_FAVORITE, DRAG_LEAVE, DRAG_ENTER, PLAY, PAUSE, CURRENTLY_PLAYING } from './actions'
 
+
+/**
+ * Stores all the action creators to be dispatched to the reducer. 
+ */
+
 export const getPodcasts = (data) => ({
   type: GET_PODCASTS
 });
@@ -34,14 +39,6 @@ export const dragEnter = (data) => ({
   payload: data
 })
 
-// export const getFavorites = (data) => ({
-//   type: GET_FAVORITES
-// });
-
-// export const gotFavorites  = (data) => ({
-//   type: GOT_FAVORITES,
-//   payload: data
-// });
 
 export const playing = (data) => ({
   type: PLAY,

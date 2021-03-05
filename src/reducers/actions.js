@@ -1,3 +1,7 @@
+/**
+ * Stores all the actions for Redux.
+ */
+
 export const GET_PODCASTS = 'GET_PODCASTS';
 
 export const GOT_PODCASTS = 'GOT_PODCASTS';
