@@ -16,10 +16,10 @@ In this project you are presented with a webpage that loads a selection of Podca
 
 ## ✨ Project Features
 The project is mainly served through the src folder, which is comprised of the following folders:
-- [`/components/PodcastList.js`](Componenets) - Holds all the react componenets associated with this project
-- [`./src/css`](CSS) - Comprised of all CSS/Sass files used for styling in this project.
-- [`./src/reducers`](Reducers) - Comprised of all the parts of the Redux function that holds state. 
-- [`./src/view`](View) - Made up of the file that holds the view that a user sees when first visiting my website.
+- Componenets - Holds all the react componenets associated with this project
+- CSS - Comprised of all CSS/Sass files used for styling in this project.
+- Reducers - Comprised of all the parts of the Redux function that holds state. 
+- View - Made up of the file that holds the view that a user sees when first visiting my website.
   
 
 ## 💻 LocalDevelopment 
