@@ -1,6 +1,6 @@
 # Podcasting
 
-### If you want to see the project in action, [visit the delpoyed project on Heroku](https://the-shoppies-awards.herokuapp.com/)!
+### If you want to see the project in action
 
 This project is my submission for the Pandora + SiriusXM Fullstack Apprenticeship created by [OnRamp + Pandora + SiriusXM](https://www.onramp.io/ts/role/5fff36934646b33c661f3d83). The project was built using [Create React App](https://github.com/facebook/create-react-app), [Redux](https://redux.js.org/introduction/getting-started), [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_Resources), [Sass](https://sass-lang.com/) and [NodeJS](https://nodejs.org/en/).
 
@@ -16,7 +16,7 @@ In this project you are presented with a webpage that loads a selection of Podca
 
 ## 🎈 Project Features
 The project is mainly served through the src folder, which is comprised of the following folders:
-- [`./src/components`](Componenets) - Holds all the react componenets associated with this project
+- [`../src/components`](Componenets) - Holds all the react componenets associated with this project
 - [`./src/css`](CSS) - Comprised of all CSS/Sass files used for styling in this project.
 - [`./src/reducers`](Reducers) - Comprised of all the parts of the Redux function that holds state. 
 - [`./src/view`](View) - Made up of the file that holds the view that a user sees when first visiting my website.
