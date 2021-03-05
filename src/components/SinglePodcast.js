@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, Row, Col } from 'react-bootstrap';
 import { FiPlayCircle } from 'react-icons/fi';
 import { FiPauseCircle } from 'react-icons/fi';
+import { placeholder } from '../images/placeholder.png'
 
 /**
  * A functional component for the creation of a single podcast.
@@ -81,7 +82,7 @@ export default class SinglePodcast extends React.Component {
 								<Card.Img
 									src={
 										this.state.podcast.image === '' ? (
-											'../images/placeholder.png'
+											'./images/placeholder.png'
 										) : (
 											this.state.podcast.image
 										)
