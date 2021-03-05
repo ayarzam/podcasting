@@ -1,4 +1,4 @@
-import { GET_PODCASTS, GOT_PODCASTS, FAVORITES, ADD_FAVORITE, REMOVE_FAVORITE, PLAY, PAUSE, CURRENTLY_PLAYING } from './actions';
+import { GET_PODCASTS, GOT_PODCASTS, FAVORITES, ADD_FAVORITE, REMOVE_FAVORITE, DRAG_LEAVE, PLAY, PAUSE, CURRENTLY_PLAYING, DRAG_ENTER } from './actions';
 
 const initialState = {
   podcasts: [],
@@ -6,7 +6,8 @@ const initialState = {
   playing: false,
   paused: false,
   currently_playing: null,
-  favorites: []
+  favorites: [], 
+  removeFav: false,
 }
 
 export const podcastReducer = (state = initialState, action) => {
@@ -20,11 +21,15 @@ export const podcastReducer = (state = initialState, action) => {
   case ADD_FAVORITE: 
     return {...state, favorites: action.payload}
   case REMOVE_FAVORITE:
-    return{...state, favorite: state.favorite.filter(podcast => podcast.name !== action.payload)};
+    return{...state, favorites: action.payload};
+  case DRAG_LEAVE:
+    return {...state, removeFav: action.payload}
+  case DRAG_ENTER:
+    return {...state, removeFav: action.payload}
   case PLAY:
-    return{...state, playing: true };
+    return{ playing: action.payload };
   case PAUSE: 
-    return {...state, paused: true };
+    return { paused: action.payload };
   case CURRENTLY_PLAYING: 
     return {...state, currently_playing: action.payload};
   default:

@@ -1,4 +1,4 @@
-import { GET_PODCASTS, GOT_PODCASTS, FAVORITES, ADD_FAVORITE, REMOVE_FAVORITE, PLAY, PAUSE, CURRENTLY_PLAYING } from './actions'
+import { GET_PODCASTS, GOT_PODCASTS, FAVORITES, ADD_FAVORITE, REMOVE_FAVORITE, DRAG_LEAVE, DRAG_ENTER, PLAY, PAUSE, CURRENTLY_PLAYING } from './actions'
 
 export const getPodcasts = (data) => ({
   type: GET_PODCASTS
@@ -24,6 +24,16 @@ export const removeFavorite = (data) => ({
   payload: data
 })
 
+export const dragLeave = (data) => ({
+  type: DRAG_LEAVE, 
+  payload: data
+})
+
+export const dragEnter = (data) => ({
+  type: DRAG_ENTER,
+  payload: data
+})
+
 // export const getFavorites = (data) => ({
 //   type: GET_FAVORITES
 // });
@@ -33,12 +43,14 @@ export const removeFavorite = (data) => ({
 //   payload: data
 // });
 
-export const playing = () => ({
-  type: PLAY
+export const playing = (data) => ({
+  type: PLAY,
+  payload: data
 });
 
-export const paused = () =>({
-  type: PAUSE
+export const paused = (data) =>({
+  type: PAUSE, 
+  payload: data
 });
 
 export const currently_playing = (data) => ({

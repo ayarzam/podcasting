@@ -3,7 +3,7 @@ import loggingMiddleware from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import axios from 'axios';
 import { podcastReducer } from './reducers/index';
-import { getPodcasts, gotPodcasts, addFavorite, removeFavorite } from './reducers/actionCreators';
+import { getPodcasts, gotPodcasts, addFavorite, removeFavorite, dragLeave, dragEnter } from './reducers/actionCreators';
 
 export const fetchPodcasts = () => {
 	return async (dispatch) => {
@@ -40,6 +40,30 @@ export const deleteFavorite = (data) => {
 		}
 	};
 };
+
+export const updateDragLeave = (data) => {
+  return async (dispatch) => {
+		try {
+      dispatch(dragLeave(data));
+    }
+    catch (error) {
+      console.log('There was a problem in the updateDragLeave thunk', error);
+			console.error(error);
+    }
+  }
+}
+
+export const updateDragEnter = (data) => {
+  return async (dispatch) => {
+		try {
+      dispatch(dragEnter(data));
+    }
+    catch (error) {
+      console.log('There was a problem in the updateDragEnter thunk', error);
+			console.error(error);
+    }
+  }
+}
 
 const loadFromLocalStorage = () => {
 	try {

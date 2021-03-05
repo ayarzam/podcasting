@@ -8,6 +8,10 @@ export const ADD_FAVORITE = 'ADD_FAVORITE';
 
 export const REMOVE_FAVORITE = 'REMOVE_FAVORITE'
 
+export const DRAG_LEAVE = 'DRAG_LEAVE'
+
+export const DRAG_ENTER = 'DRAG_ENTER'
+
 export const PLAY = 'PLAY';
 
 export const PAUSE = 'PAUSE';
