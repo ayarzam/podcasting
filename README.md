@@ -1,6 +1,6 @@
 # Podcasting
 
-### If you want to see the project in action it is deployed [here](https://ayarzam.github.io/podcasting/)
+### If you want to see the project in action it is deployed [here, using github-pages](https://ayarzam.github.io/podcasting/)
 
 This project is my submission for the Pandora + SiriusXM Fullstack Apprenticeship created by [OnRamp + Pandora + SiriusXM](https://www.onramp.io/ts/role/5fff36934646b33c661f3d83). The project was built using [Create React App](https://github.com/facebook/create-react-app), [Redux](https://redux.js.org/introduction/getting-started), [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_Resources), [Sass](https://sass-lang.com/) and [NodeJS](https://nodejs.org/en/).
 
