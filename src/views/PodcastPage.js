@@ -16,8 +16,9 @@ export default class PodcastPage extends React.Component {
 					<p>
 						Below is a collection of popular podcasts curated from SiriusXM. If you want to favorite any of
 						the podcasts in the list labeled 'SiriusXM Podcasts,' simply drag and drop them into the list
-						labeled 'Favorites'. Don't worry we'll also remember your favorited podcasts the next time you
-						visit this webpage.
+						labeled 'Favorites'. If you want to remove a podcast from your favorites list, simply drag it
+						out of the list and watch it disappear. Don't worry we'll also remember your favorited podcasts
+						the next time you visit this webpage.
 					</p>
 				</div>
 				<Row className="lists_container">
