@@ -1,4 +1,4 @@
-import {GET_PODCASTS, GOT_PODCASTS, PLAY, PAUSE, CURRENTLY_PLAYING, FAVORITES, DRAG, DROP} from './actions'
+import { GET_PODCASTS, GOT_PODCASTS, FAVORITES, UPDATE_FAVORITES, PLAY, PAUSE, CURRENTLY_PLAYING } from './actions'
 
 export const getPodcasts = (data) => ({
   type: GET_PODCASTS
@@ -8,6 +8,25 @@ export const gotPodcasts  = (data) => ({
   type: GOT_PODCASTS,
   payload: data
 });
+
+export const Favorites = (data) => ({
+  type: FAVORITES,
+  payload: data
+});
+
+export const updateFavoriteList = (data) => ({
+  type: UPDATE_FAVORITES,
+  payload: data
+});
+
+// export const getFavorites = (data) => ({
+//   type: GET_FAVORITES
+// });
+
+// export const gotFavorites  = (data) => ({
+//   type: GOT_FAVORITES,
+//   payload: data
+// });
 
 export const playing = () => ({
   type: PLAY
@@ -22,18 +41,13 @@ export const currently_playing = (data) => ({
   payload: data
 });
 
-export const favorites = (data) => ({
-  type: FAVORITES, 
-  payload: data
-})
+// export const dragged = (draggedPodcast) => ({
+//   type: DRAG,
+//   payload: draggedPodcast
+// })
 
-export const dragged = (draggedPodcast) => ({
-  type: DRAG,
-  payload: draggedPodcast
-})
-
-export const dropped = (droppedPodcast) => ({
-  type: DROP,
-  payload: droppedPodcast
-})
+// export const dropped = (droppedPodcast) => ({
+//   type: DROP,
+//   payload: droppedPodcast
+// })
 
